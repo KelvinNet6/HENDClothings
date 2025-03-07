@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f0f8ff; /* light blue background */
+}
+
+header {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background-color: #87CEFA; /* light blue */
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.product-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.product-img {
+  width: 300px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.product-info h3 {
+  font-size: 1.5rem;
+}
+
+.price {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  margin-top: 50px;
+}
