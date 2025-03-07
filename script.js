@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   cart = JSON.parse(localStorage.getItem("cart")) || [];
   updateCartCount();
 });
+
 // Function to display cart items in the modal
 function displayCartModal() {
   const cartModal = document.getElementById("cart-modal");
@@ -68,10 +69,23 @@ function displayCartModal() {
 
   let total = 0;
 
-  // Loop through each cart item and display it
+  // Loop through each cart item and display it in a compact format
   cart.forEach(item => {
     const cartItemElement = document.createElement("div");
-    cartItemElement.textContent = `${item.productName} - $${item.price} x ${item.quantity}`;
+    cartItemElement.classList.add("cart-item");
+
+    // Create product image, if available
+    const productImage = document.createElement("img");
+    productImage.src = item.image || "default-product-image.jpg"; // Use default image if not available
+    productImage.alt = item.productName;
+
+    // Create product name, price, and quantity display
+    const productDetails = document.createElement("p");
+    productDetails.textContent = `${item.productName} - $${item.price} x ${item.quantity}`;
+
+    cartItemElement.appendChild(productImage);
+    cartItemElement.appendChild(productDetails);
+
     cartItemsElement.appendChild(cartItemElement);
 
     total += item.price * item.quantity;
