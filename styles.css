@@ -51,15 +51,15 @@ nav ul li a {
 
 /* Style for the shopping cart icon */
 .cart-icon a {
-  font-size: 20px; /* Makes the icon slightly bigger */
+  font-size: 20px; 
 }
 
 .hero {
-  background-image: url('12a590f0-fe2d-47c3-a2e0-e376ceddde24.jpg'); /* Replace with your image file */
-  background-size: cover;  /* Ensures the image covers the entire section */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents repetition */
-  background-color: #87CEFA; /* Fallback light blue in case image doesn't load */
+  background-image: url('D06647D9-153C-407D-BB93-9750E5945796.jpg'); 
+  background-size: cover;  
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-color: #87CEFA; 
   color: white;
   text-align: center;
   padding: 100px 20px;
