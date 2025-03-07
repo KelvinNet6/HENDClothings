@@ -339,11 +339,11 @@ footer {
   padding: 20px;
   margin-top: 50px;
 }
-/* Modal Styles */
+/* Cart Modal Styles */
 .cart-modal {
   display: none; /* Hidden by default */
   position: fixed;
-  z-index: 1000; /* Make sure it’s on top */
+  z-index: 1000; /* Ensure it's on top */
   left: 0;
   top: 0;
   width: 100%;
@@ -359,11 +359,11 @@ footer {
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
-  width: 450px; /* Increase width for a wider modal */
-  max-width: 80%; /* Ensure modal doesn't exceed screen width on small screens */
+  width: 450px; /* Default width */
+  max-width: 80%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  overflow-y: auto; /* Allow scrolling for large cart contents */
+  overflow-y: auto;
 }
 
 h3 {
@@ -372,20 +372,46 @@ h3 {
   margin-bottom: 20px;
 }
 
+/* Styling the Cart Items */
 #cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   max-height: 200px;
   overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem; /* Smaller font size for compactness */
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.cart-item img {
+  width: 50px; /* Smaller image size */
+  height: auto;
+  margin-right: 10px;
+}
+
+.cart-item p {
+  margin: 0;
+  font-size: 0.85rem; /* Smaller text for item name */
+  color: #333;
 }
 
 #cart-total {
   font-weight: bold;
   margin-top: 10px;
+  font-size: 1.1rem;
 }
 
 .checkout-btn {
   display: block;
   text-align: center;
-  background-color: #333;
+  background-color: #4CAF50;
   color: white;
   padding: 10px;
   text-decoration: none;
@@ -414,33 +440,18 @@ h3 {
 /* Responsive Styling */
 @media (max-width: 768px) {
   .modal-content {
-    width: 80%; /* Increase the width on small screens */
-    max-width: 90%; /* Allow modal to occupy more space on smaller devices */
+    width: 80%;
   }
-  
   h3 {
-    font-size: 1.2rem; /* Adjust heading size for mobile */
-  }
-  
-  #cart-items {
-    max-height: 150px; /* Reduce height for smaller screens */
-  }
-
-  .checkout-btn {
-    font-size: 0.9rem; /* Slightly smaller button text */
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .modal-content {
-    width: 90%; /* Further increase the width on extra small screens */
+    width: 90%;
   }
-
   h3 {
-    font-size: 1rem; /* Further reduce heading size for mobile */
-  }
-
-  .checkout-btn {
-    font-size: 0.8rem; /* Adjust button text size */
+    font-size: 1rem;
   }
 }
