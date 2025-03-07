@@ -25,7 +25,7 @@ function showToastMessage(message) {
 }
 
 // Function to add items to the cart
-function addToCart(productName, price) {
+function addToCart(productName, price, image) {
   // Check if cart exists
   if (!Array.isArray(cart)) {
     cart = [];
@@ -38,8 +38,8 @@ function addToCart(productName, price) {
   if (existingItem) {
     existingItem.quantity += 1;
   } else {
-    // Otherwise, add the item to the cart
-    cart.push({ productName, price, quantity: 1 });
+    // Otherwise, add the item to the cart with image
+    cart.push({ productName, price, quantity: 1, image });
   }
 
   // Save updated cart to localStorage
@@ -51,6 +51,7 @@ function addToCart(productName, price) {
   // Show toast message
   showToastMessage(`${productName} added to cart!`);
 }
+
 
 // Restore cart count on page load
 document.addEventListener("DOMContentLoaded", () => {
