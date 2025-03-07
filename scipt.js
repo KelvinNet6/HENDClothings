@@ -4,13 +4,20 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 // Function to update cart count in UI
 function updateCartCount() {
   const cartCountElement = document.getElementById("cart-count");
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  cartCountElement.textContent = totalItems;
+  if (cartCountElement) {
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountElement.textContent = totalItems;
+  }
 }
 
 // Function to add items to the cart
 function addToCart(productName, price) {
-  // Check if the product is already in the cart
+  // Ensure cart is an array
+  if (!Array.isArray(cart)) {
+    cart = [];
+  }
+
+  // Check if the product already exists in the cart
   const existingItem = cart.find(item => item.productName === productName);
 
   if (existingItem) {
@@ -22,7 +29,7 @@ function addToCart(productName, price) {
   // Save updated cart to localStorage
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  // Update the cart count
+  // Update the cart count in the UI
   updateCartCount();
 
   alert(`${productName} has been added to your cart!`);
@@ -30,5 +37,7 @@ function addToCart(productName, price) {
 }
 
 // Restore cart count on page load
-document.addEventListener("DOMContentLoaded", updateCartCount);
-
+document.addEventListener("DOMContentLoaded", () => {
+  cart = JSON.parse(localStorage.getItem("cart")) || []; // Load cart again
+  updateCartCount(); // Update cart count display
+});
