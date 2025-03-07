@@ -96,6 +96,133 @@ button {
 button:hover {
   background-color: #555;
 }
+#about {
+  background-color: #f0f8ff; /* Light blue background to keep the theme consistent */
+  color: #333; /* Dark text for readability */
+  padding: 60px 20px; /* Spacious padding for a clean, open layout */
+  text-align: center; /* Center align the text */
+  border-top: 5px solid #87CEFA; /* Light blue border at the top for a sleek look */
+}
+
+#about h2 {
+  font-size: 2.5rem; /* Slightly larger heading for emphasis */
+  margin-bottom: 20px; /* Space below the heading */
+  font-weight: bold; /* Strong font weight for the title */
+  color: #333; /* Dark color for contrast against light blue background */
+}
+
+#about p {
+  font-size: 1.1rem; /* Slightly larger text for easier readability */
+  line-height: 1.8; /* Space between lines for a more open feel */
+  max-width: 800px; /* Constrain width for better line length */
+  margin: 0 auto; /* Center the paragraph */
+  padding: 0 20px; /* Add some padding on the sides */
+  color: #555; /* Slightly lighter text color for body text */
+}
+
+#about .highlight {
+  font-weight: bold;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  #about h2 {
+    font-size: 2rem; /* Adjust heading size on smaller screens */
+  }
+
+  #about p {
+    font-size: 1rem; /* Adjust paragraph size for mobile */
+    padding: 0 10px; /* Reduce padding on smaller screens */
+  }
+}
+/* Contact Section */
+#contact {
+  position: relative;
+  background-image: url('path-to-your-image.jpg'); /* Add your background image here */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* Transparent container for content */
+.contact-container {
+  background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+  padding: 40px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+/* Social Media Icons */
+.social-media {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #87CEFA; /* Change to your brand color on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  #contact {
+    padding: 60px 20px;
+  }
+
+  .contact-container {
+    padding: 30px;
+  }
+
+  .social-media {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 
 footer {
   text-align: center;
