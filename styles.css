@@ -75,6 +75,17 @@ nav ul li a {
   font-size: 1.2rem;
 }
 
+#cart-count {
+  background: red;
+  color: white;
+  font-size: 14px;
+  border-radius: 50%;
+  padding: 3px 8px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
 /* Product Section Styles */
 .product-section {
   text-align: center;
