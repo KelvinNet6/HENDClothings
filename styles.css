@@ -55,11 +55,35 @@ nav ul li a {
 }
 
 .hero {
-  background-color: #87CEFA; /* light blue */
+  background-image: url('your-image.jpg'); /* Replace with your image file */
+  background-size: cover;  /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repetition */
+  background-color: #87CEFA; /* Fallback light blue in case image doesn't load */
   color: white;
   text-align: center;
   padding: 100px 20px;
+  position: relative;
 }
+
+/* Optional: Add a semi-transparent overlay for better readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Adjust transparency */
+  z-index: 0;
+}
+
+/* Ensure text is above the overlay */
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
 
 .hero h1 {
   font-size: 3rem;
