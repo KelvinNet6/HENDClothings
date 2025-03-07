@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HEND Streetwear</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#collection">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Relaxed. Cool. Anticipation.</h1>
+      <p>Explore the light blue matching set collection.</p>
+      <a href="#collection" class="cta-btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Product Section -->
+  <section id="collection" class="product-section">
+    <h2>Featured Collection</h2>
+    <div class="product">
+      <img src="shirt.jpg" alt="Light Blue T-Shirt" class="product-img">
+      <div class="product-info">
+        <h3>Light Blue T-Shirt</h3>
+        <p>A soft, breathable cotton tee with a minimalist design.</p>
+        <p class="price">$40</p>
+        <button onclick="addToCart('Light Blue T-Shirt', 40)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="shorts.jpg" alt="Light Blue Shorts" class="product-img">
+      <div class="product-info">
+        <h3>Light Blue Shorts</h3>
+        <p>Comfortable, stretchy shorts designed for casual streetwear.</p>
+        <p class="price">$35</p>
+        <button onclick="addToCart('Light Blue Shorts', 35)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About HEND</h2>
+    <p>Our mission is to create streetwear that feels like home but looks like the future. HEND is about calm, cool, and anticipation in every design.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions? Reach out to us!</p>
+    <form>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 HEND Streetwear. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
