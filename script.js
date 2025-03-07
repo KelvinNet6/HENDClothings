@@ -57,3 +57,52 @@ document.addEventListener("DOMContentLoaded", () => {
   cart = JSON.parse(localStorage.getItem("cart")) || [];
   updateCartCount();
 });
+// Function to display cart items in the modal
+function displayCartModal() {
+  const cartModal = document.getElementById("cart-modal");
+  const cartItemsElement = document.getElementById("cart-items");
+  const cartTotalElement = document.getElementById("cart-total");
+
+  // Clear any previous content
+  cartItemsElement.innerHTML = "";
+
+  let total = 0;
+
+  // Loop through each cart item and display it
+  cart.forEach(item => {
+    const cartItemElement = document.createElement("div");
+    cartItemElement.textContent = `${item.productName} - $${item.price} x ${item.quantity}`;
+    cartItemsElement.appendChild(cartItemElement);
+
+    total += item.price * item.quantity;
+  });
+
+  // Display total price
+  cartTotalElement.textContent = `Total: $${total}`;
+
+  // Show the modal
+  cartModal.style.display = "block";
+}
+
+// Function to close the cart modal
+function closeCartModal() {
+  const cartModal = document.getElementById("cart-modal");
+  cartModal.style.display = "none";
+}
+
+// Open the modal when the cart icon is clicked
+document.getElementById("cart-icon").addEventListener("click", displayCartModal);
+
+// Close the modal when the close button is clicked
+document.getElementById("close-modal").addEventListener("click", closeCartModal);
+
+// Close the modal when the user clicks outside the modal content
+window.addEventListener("click", function(event) {
+  const cartModal = document.getElementById("cart-modal");
+  if (event.target === cartModal) {
+    cartModal.style.display = "none";
+  }
+});
+
+// Update cart count on page load
+document.addEventListener("DOMContentLoaded", updateCartCount);
