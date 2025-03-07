@@ -114,13 +114,13 @@ button:hover {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
 @media (max-width: 480px) {
   .product-grid {
-    grid-template-columns: 1fr; /* 1 column on small screens */
+    grid-template-columns: 1fr;
   }
 
   .product {
@@ -129,27 +129,27 @@ button:hover {
 }
 
 #about{
-  background-color: #f0f8ff; /* Light blue background to keep the theme consistent */
-  color: #333; /* Dark text for readability */
-  padding: 60px 20px; /* Spacious padding for a clean, open layout */
-  text-align: center; /* Center align the text */
-  border-top: 5px solid #87CEFA; /* Light blue border at the top for a sleek look */
+  background-color: #f0f8ff; 
+  color: #333; 
+  padding: 60px 20px;
+  text-align: center; 
+  border-top: 5px solid #87CEFA;
 }
 
 #about h2 {
-  font-size: 2.5rem; /* Slightly larger heading for emphasis */
-  margin-bottom: 20px; /* Space below the heading */
-  font-weight: bold; /* Strong font weight for the title */
-  color: #333; /* Dark color for contrast against light blue background */
+  font-size: 2.5rem; 
+  margin-bottom: 20px; 
+  font-weight: bold; 
+  color: #333;
 }
 
 #about p {
-  font-size: 1.1rem; /* Slightly larger text for easier readability */
-  line-height: 1.8; /* Space between lines for a more open feel */
-  max-width: 800px; /* Constrain width for better line length */
-  margin: 0 auto; /* Center the paragraph */
-  padding: 0 20px; /* Add some padding on the sides */
-  color: #555; /* Slightly lighter text color for body text */
+  font-size: 1.1rem; 
+  line-height: 1.8; 
+  max-width: 800px;
+  margin: 0 auto; 
+  padding: 0 20px;
+  color: #555;
 }
 
 #about .highlight {
@@ -159,12 +159,12 @@ button:hover {
 
 @media screen and (max-width: 768px) {
   #about h1 {
-    font-size: 2rem; /* Adjust heading size on smaller screens */
+    font-size: 2rem; 
   }
 
   #about p {
-    font-size: 1rem; /* Adjust paragraph size for mobile */
-    padding: 0 10px; /* Reduce padding on smaller screens */
+    font-size: 1rem; 
+    padding: 0 10px; 
   }
 }
 /* Contact Section */
@@ -173,16 +173,16 @@ button:hover {
   background-image: url('hend.webp'); 
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; /* Ensures the image covers the entire container */
+  background-size: cover; 
   color: white;
   padding: 100px 20px;
   text-align: center;
-  background-attachment: fixed; /* Optional: adds a parallax effect */
+  background-attachment: fixed; 
 }
 
 /* Transparent container for content */
 .contact-container {
-  background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
   border-radius: 8px;
   width: 100%;
