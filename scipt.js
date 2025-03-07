@@ -26,16 +26,20 @@ function showToastMessage(message) {
 
 // Function to add items to the cart
 function addToCart(productName, price) {
+  // Check if cart exists
   if (!Array.isArray(cart)) {
     cart = [];
   }
 
+  // Check if item already exists in cart
   const existingItem = cart.find(item => item.productName === productName);
 
+  // If the item exists, increment the quantity
   if (existingItem) {
-    existingItem.quantity += 1; // Increase quantity if item exists
+    existingItem.quantity += 1;
   } else {
-    cart.push({ productName, price, quantity: 1 }); // Add new item
+    // Otherwise, add the item to the cart
+    cart.push({ productName, price, quantity: 1 });
   }
 
   // Save updated cart to localStorage
@@ -44,7 +48,7 @@ function addToCart(productName, price) {
   // Update the cart count in the UI
   updateCartCount();
 
-  // Show toast message instead of alert
+  // Show toast message
   showToastMessage(`${productName} added to cart!`);
 }
 
