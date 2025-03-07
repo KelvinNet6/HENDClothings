@@ -138,8 +138,7 @@ button:hover {
 /* Contact Section */
 #contact {
   position: relative;
-  background-image: url('DALL·E 2025-03-07 05.43.36 - A stylish streetwear matching set in light blue, consisting of a T-shirt and shorts. The T-shirt has a minimalist 'HEND' logo placed subtly in the cen (1).webp'); /* Add your background image here */
-  background-size: cover;
+  background-image: url('DALL·E 2025-03-07 05.43.36 - A stylish streetwear matching set in light blue, consisting of a T-shirt and shorts. The T-shirt has a minimalist 'HEND' logo placed subtly in the cen (1).webp'); 
   background-position: center;
   color: white;
   padding: 100px 20px;
