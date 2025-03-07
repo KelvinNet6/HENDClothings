@@ -22,8 +22,19 @@ header {
 
 nav ul {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centers the menu items */
+  align-items: center;
   list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+
+/* Pushes the cart icon to the right */
+.cart-icon {
+  margin-left: auto; /* Moves the cart icon to the right */
+  margin-right: 20px;
 }
 
 nav ul li {
@@ -34,6 +45,13 @@ nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the shopping cart icon */
+.cart-icon a {
+  font-size: 20px; /* Makes the icon slightly bigger */
 }
 
 .hero {
