@@ -128,6 +128,7 @@ button:hover {
   }
 }
 
+#about{
   background-color: #f0f8ff; /* Light blue background to keep the theme consistent */
   color: #333; /* Dark text for readability */
   padding: 60px 20px; /* Spacious padding for a clean, open layout */
@@ -135,7 +136,7 @@ button:hover {
   border-top: 5px solid #87CEFA; /* Light blue border at the top for a sleek look */
 }
 
-h1 {
+#about h2 {
   font-size: 2.5rem; /* Slightly larger heading for emphasis */
   margin-bottom: 20px; /* Space below the heading */
   font-weight: bold; /* Strong font weight for the title */
@@ -157,7 +158,7 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
-  h1 {
+  #about h1 {
     font-size: 2rem; /* Adjust heading size on smaller screens */
   }
 
