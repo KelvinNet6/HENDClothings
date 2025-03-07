@@ -167,9 +167,12 @@ button:hover {
   position: relative;
   background-image: url('hend.webp'); 
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; /* Ensures the image fits inside without being cropped */
   color: white;
   padding: 100px 20px;
   text-align: center;
+  background-attachment: fixed; /* Optional: adds a parallax effect */
 }
 
 /* Transparent container for content */
