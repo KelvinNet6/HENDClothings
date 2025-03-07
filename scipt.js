@@ -10,14 +10,26 @@ function updateCartCount() {
   }
 }
 
+// Function to show a toast notification
+function showToastMessage(message) {
+  const toast = document.createElement("div");
+  toast.className = "toast-message";
+  toast.textContent = message;
+
+  document.body.appendChild(toast);
+
+  // Remove toast after 3 seconds
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
+
 // Function to add items to the cart
 function addToCart(productName, price) {
-  // Ensure cart is an array
   if (!Array.isArray(cart)) {
     cart = [];
   }
 
-  // Check if the product already exists in the cart
   const existingItem = cart.find(item => item.productName === productName);
 
   if (existingItem) {
@@ -32,12 +44,12 @@ function addToCart(productName, price) {
   // Update the cart count in the UI
   updateCartCount();
 
-  alert(`${productName} has been added to your cart!`);
-  console.log(cart); // Display cart contents in console for testing
+  // Show toast message instead of alert
+  showToastMessage(`${productName} added to cart!`);
 }
 
 // Restore cart count on page load
 document.addEventListener("DOMContentLoaded", () => {
-  cart = JSON.parse(localStorage.getItem("cart")) || []; // Load cart again
-  updateCartCount(); // Update cart count display
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+  updateCartCount();
 });
