@@ -146,7 +146,7 @@ function hideCheckoutModal() {
 // Open the Checkout Modal when the "Go to Checkout" button is clicked
 document.getElementById("go-to-checkout").addEventListener("click", function() {
   // Hide any other modals if they are open
-  document.getElementById("cart-modal").style.display = "none";
+  document.getElementById("cart-modal").style.display = "none"; // Hide cart modal when going to checkout
 
   // Calculate and display total amount in Checkout Modal
   const checkoutTotal = document.getElementById("checkout-total");
@@ -166,7 +166,6 @@ document.getElementById("close-checkout-modal").addEventListener("click", functi
 document.getElementById("checkout-modal-overlay").addEventListener("click", function() {
   hideCheckoutModal();
 });
-
 
 // Handle Pay Button Click to reveal the password field
 document.getElementById("pay-button").addEventListener("click", function() {
