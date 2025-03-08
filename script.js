@@ -155,6 +155,7 @@ document.getElementById("checkout-button").addEventListener("click", function() 
 
   // Show the checkout modal
   showCheckoutModal();
+   updateCheckoutTotal();
 });
 
 // Close Checkout Modal when the close button is clicked
