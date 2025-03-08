@@ -144,13 +144,13 @@ function hideCheckoutModal() {
 }
 
 // Open the Checkout Modal when the "Go to Checkout" button is clicked
-document.getElementById("checkout-modal").addEventListener("click", function() {
+document.getElementById("checkout-button").addEventListener("click", function() {
   // Hide any other modals if they are open
   document.getElementById("cart-modal").style.display = "none"; // Hide cart modal when going to checkout
 
   // Calculate and display total amount in Checkout Modal
   const checkoutTotal = document.getElementById("checkout-total");
-  const totalAmount = cart.reduce((total, item) => total + item.price, 0);
+  const totalAmount = cart.reduce((total, item) => total + item.price * item.quantity, 0);
   checkoutTotal.textContent = `$${totalAmount.toFixed(2)}`;
 
   // Show the checkout modal
@@ -166,6 +166,7 @@ document.getElementById("close-checkout-modal").addEventListener("click", functi
 document.getElementById("checkout-modal-overlay").addEventListener("click", function() {
   hideCheckoutModal();
 });
+
 
 // Handle Pay Button Click to reveal the password field
 document.getElementById("pay-button").addEventListener("click", function() {
