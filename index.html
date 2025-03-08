@@ -9,33 +9,56 @@
 </head>
 <body>
   
-  <!-- Navbar -->
 <header>
   <nav>
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="#collection">Colletcion</a></li>
+      <li><a href="#collection">Collection</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
       <li class="cart-icon">
-  <a href="javascript:void(0)" id="cart-icon">
-    <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
-  </a>
+        <a href="javascript:void(0)" id="cart-icon">
+          <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+        </a>
 
-  <!-- Cart Modal -->
-<div id="cart-modal" class="cart-modal">
-  <div class="modal-content">
-    <span id="close-modal" class="close-btn">&times;</span>
-    <h3>Your Cart</h3>
-    <div id="cart-items"></div>
-    <div id="cart-total"></div>
-    <a href="cart.html" class="checkout-btn">Go to Checkout</a>
-  </div>
-</div>
-</li>
-  </ul>
+        <!-- Cart Modal -->
+        <div id="cart-modal" class="cart-modal">
+          <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <h3>Your Cart</h3>
+            <div id="cart-items"></div>
+            <div id="cart-total"></div>
+            <a href="javascript:void(0)" id="go-to-checkout" class="checkout-btn">Go to Checkout</a>
+          </div>
+        </div>
+
+        <!-- Checkout Modal -->
+        <div id="checkout-modal" class="checkout-modal">
+          <div class="modal-content">
+            <span id="close-checkout-modal" class="close-btn">&times;</span>
+            <h3>Checkout</h3>
+            <p>Total Amount: <span id="checkout-total"></span></p>
+            <form id="payment-form">
+              <label for="paysheet-number">Paysheet Number:</label>
+              <input type="text" id="paysheet-number" name="paysheet-number" required>
+              
+              <!-- Password Field is initially hidden -->
+              <div id="password-field" style="display:none;">
+                <label for="paysheet-password">Password:</label>
+                <input type="password" id="paysheet-password" name="paysheet-password" required>
+              </div>
+
+              <!-- Pay Button -->
+              <button type="button" id="pay-button">Pay</button>
+            </form>
+            <div id="payment-status"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
   </nav>
 </header>
+
 
 
   <!-- Hero Section -->
