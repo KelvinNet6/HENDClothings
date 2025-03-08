@@ -122,14 +122,20 @@ window.addEventListener("click", function(event) {
 // Update cart count on page load
 document.addEventListener("DOMContentLoaded", updateCartCount);
 
+ // Function to update the cart total in the checkout modal
+function updateCheckoutTotal() {
+  const checkoutTotal = document.getElementById("checkout-total");
+  const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+  checkoutTotal.textContent = `$${totalAmount.toFixed(2)}`; // Display total with 2 decimal places
+}
+
+// Open the Checkout Modal when the checkout button is clicked
 document.getElementById("checkout-modal").addEventListener("click", function() {
-  // Hide Cart Modal
+  // Hide Cart Modal and show Checkout Modal
   document.getElementById("cart-modal").style.display = "none";
 
   // Calculate and display total amount in Checkout Modal
-  const checkoutTotal = document.getElementById("checkout-total");
-  const totalAmount = cart.reduce((total, item) => total + item.price, 0);
-  checkoutTotal.textContent = `$${totalAmount.toFixed(2)}`;
+  updateCheckoutTotal();
 
   // Show Checkout Modal
   document.getElementById("checkout-modal").classList.add("show");
