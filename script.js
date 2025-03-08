@@ -129,24 +129,44 @@ function updateCheckoutTotal() {
   checkoutTotal.textContent = `$${totalAmount.toFixed(2)}`; // Display total with 2 decimal places
 }
 
-// Open the Checkout Modal when the checkout button is clicked
-document.getElementById("checkout-modal").addEventListener("click", function() {
-  // Hide Cart Modal and show Checkout Modal
+// Function to show the checkout modal and overlay
+function showCheckoutModal() {
+  // Display the checkout modal and overlay
+  document.getElementById("checkout-modal").classList.add("show");
+  document.getElementById("checkout-modal-overlay").classList.add("show");
+}
+
+// Function to hide the checkout modal and overlay
+function hideCheckoutModal() {
+  // Hide the checkout modal and overlay
+  document.getElementById("checkout-modal").classList.remove("show");
+  document.getElementById("checkout-modal-overlay").classList.remove("show");
+}
+
+// Open the Checkout Modal when the "Go to Checkout" button is clicked
+document.getElementById("go-to-checkout").addEventListener("click", function() {
+  // Hide any other modals if they are open
   document.getElementById("cart-modal").style.display = "none";
 
   // Calculate and display total amount in Checkout Modal
-  updateCheckoutTotal();
+  const checkoutTotal = document.getElementById("checkout-total");
+  const totalAmount = cart.reduce((total, item) => total + item.price, 0);
+  checkoutTotal.textContent = `$${totalAmount.toFixed(2)}`;
 
-  // Show Checkout Modal
-  document.getElementById("checkout-modal").classList.add("show");
-  document.getElementById("checkout-modal-overlay").classList.add("show");
+  // Show the checkout modal
+  showCheckoutModal();
 });
 
-// Close Checkout Modal
+// Close Checkout Modal when the close button is clicked
 document.getElementById("close-checkout-modal").addEventListener("click", function() {
-  document.getElementById("checkout-modal").classList.remove("show");
-  document.getElementById("checkout-modal-overlay").classList.remove("show");
+  hideCheckoutModal();
 });
+
+// Close Checkout Modal when clicking outside the modal (on overlay)
+document.getElementById("checkout-modal-overlay").addEventListener("click", function() {
+  hideCheckoutModal();
+});
+
 
 // Handle Pay Button Click to reveal the password field
 document.getElementById("pay-button").addEventListener("click", function() {
