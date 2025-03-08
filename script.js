@@ -124,16 +124,23 @@ document.addEventListener("DOMContentLoaded", updateCartCount);
 
 // Open Checkout Modal when "Go to Checkout" is clicked
 document.getElementById("go-to-checkout").addEventListener("click", function() {
+  // Hide Cart Modal
   document.getElementById("cart-modal").style.display = "none";
+
+  // Calculate and display total amount in Checkout Modal
   const checkoutTotal = document.getElementById("checkout-total");
   const totalAmount = cart.reduce((total, item) => total + item.price, 0);
   checkoutTotal.textContent = `$${totalAmount.toFixed(2)}`;
-  document.getElementById("checkout-modal").style.display = "block";
+
+  // Show Checkout Modal
+  document.getElementById("checkout-modal").classList.add("show");
+  document.getElementById("checkout-modal-overlay").classList.add("show");
 });
 
 // Close Checkout Modal
 document.getElementById("close-checkout-modal").addEventListener("click", function() {
-  document.getElementById("checkout-modal").style.display = "none";
+  document.getElementById("checkout-modal").classList.remove("show");
+  document.getElementById("checkout-modal-overlay").classList.remove("show");
 });
 
 // Handle Pay Button Click to reveal the password field
@@ -142,6 +149,7 @@ document.getElementById("pay-button").addEventListener("click", function() {
   document.getElementById("password-field").style.display = "block";
   document.getElementById("pay-button").textContent = "Submit Payment";  // Change the button text to 'Submit Payment'
 });
+
 
 // Simulate a payment API call (this can be replaced with real payment API logic)
 function processPayment(paysheetNumber, paysheetPassword, totalAmount) {
