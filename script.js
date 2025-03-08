@@ -121,3 +121,74 @@ window.addEventListener("click", function(event) {
 
 // Update cart count on page load
 document.addEventListener("DOMContentLoaded", updateCartCount);
+// Open Checkout Modal when "Go to Checkout" is clicked
+document.getElementById("go-to-checkout").addEventListener("click", function() {
+  document.getElementById("cart-modal").style.display = "none";
+  const checkoutTotal = document.getElementById("checkout-total");
+  const totalAmount = cart.reduce((total, item) => total + item.price, 0);
+  checkoutTotal.textContent = `$${totalAmount.toFixed(2)}`;
+  document.getElementById("checkout-modal").style.display = "block";
+});
+
+// Close Checkout Modal
+document.getElementById("close-checkout-modal").addEventListener("click", function() {
+  document.getElementById("checkout-modal").style.display = "none";
+});
+
+// Handle Pay Button Click to reveal the password field
+document.getElementById("pay-button").addEventListener("click", function() {
+  // Show password field when the Pay button is clicked
+  document.getElementById("password-field").style.display = "block";
+  document.getElementById("pay-button").textContent = "Submit Payment";  // Change the button text to 'Submit Payment'
+});
+
+// Simulate a payment API call (this can be replaced with real payment API logic)
+function processPayment(paysheetNumber, paysheetPassword, totalAmount) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // Mock successful payment response (You can replace this logic with your real payment API)
+      if (paysheetNumber && paysheetPassword) {
+        resolve({
+          status: "success",
+          message: `Payment of $${totalAmount} successful!`
+        });
+      } else {
+        reject("Invalid Paysheet details.");
+      }
+    }, 2000);  // Simulating a delay of 2 seconds (this would be the actual API call)
+  });
+}
+
+// Handle Payment Form Submission (after the user enters Paysheet Number and Password)
+document.getElementById("payment-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  // Get the user input
+  const paysheetNumber = document.getElementById("paysheet-number").value;
+  const paysheetPassword = document.getElementById("paysheet-password").value;
+  
+  // Calculate the total amount
+  const totalAmount = cart.reduce((total, item) => total + item.price, 0);
+  
+  // Call the mock payment API function (this is where you would integrate a real payment provider API)
+  processPayment(paysheetNumber, paysheetPassword, totalAmount)
+    .then(response => {
+      // If the payment was successful, clear the cart and update the UI
+      cart = [];  // Empty the cart
+      updateCart(); // Update the cart UI
+
+      // Display success message
+      const paymentStatus = document.getElementById("payment-status");
+      paymentStatus.textContent = response.message;
+
+      // Close the checkout modal after 3 seconds
+      setTimeout(() => {
+        document.getElementById("checkout-modal").style.display = "none";
+        paymentStatus.textContent = ''; // Clear payment status message
+      }, 3000);
+    })
+    .catch(error => {
+      // If there was an error (invalid Paysheet details or API failure), show an error message
+      alert(error);
+    });
+});
