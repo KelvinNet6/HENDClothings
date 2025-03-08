@@ -139,27 +139,31 @@
 </section>
 
 <!-- Checkout Modal -->
-        <div id="checkout-modal" class="checkout-modal">
-          <div class="modal-content">
-            <span id="close-checkout-modal" class="close-btn">&times;</span>
-            <h3>Checkout</h3>
-            <p>Total Amount: <span id="checkout-total"></span></p>
-            <form id="payment-form">
-              <label for="paysheet-number">Paysheet Number:</label>
-              <input type="text" id="paysheet-number" name="paysheet-number" required>
-              
-              <!-- Password Field is initially hidden -->
-              <div id="password-field" style="display:none;">
-                <label for="paysheet-password">Password:</label>
-                <input type="password" id="paysheet-password" name="paysheet-password" required>
-              </div>
+<div id="checkout-modal" class="checkout-modal">
+  <div class="modal-content">
+    <span id="close-checkout-modal" class="close-btn">&times;</span>
+    <h3>Checkout</h3>
+    <p>Total Amount: <span id="checkout-total"></span></p>
+    <form id="payment-form">
+      <label for="paysheet-number">Paysheet Number:</label>
+      <input type="text" id="paysheet-number" name="paysheet-number" required>
 
-              <!-- Pay Button -->
-              <button type="button" id="pay-button">Pay</button>
-            </form>
-            <div id="payment-status"></div>
-          </div>
-        </div>
+      <!-- Password Field is initially hidden -->
+      <div id="password-field" style="display:none;">
+        <label for="paysheet-password">Password:</label>
+        <input type="password" id="paysheet-password" name="paysheet-password" required>
+      </div>
+
+      <!-- Pay Button -->
+      <button type="button" id="pay-button">Pay</button>
+    </form>
+    <div id="payment-status"></div>
+  </div>
+</div>
+
+<!-- Checkout Modal Overlay -->
+<div class="checkout-modal-overlay" id="checkout-modal-overlay"></div>
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 HEND Streetwear. All rights reserved.</p>
