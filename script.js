@@ -144,7 +144,7 @@ function hideCheckoutModal() {
 }
 
 // Open the Checkout Modal when the "Go to Checkout" button is clicked
-document.getElementById("go-to-checkout").addEventListener("click", function() {
+document.getElementById("checkout-modal").addEventListener("click", function() {
   // Hide any other modals if they are open
   document.getElementById("cart-modal").style.display = "none"; // Hide cart modal when going to checkout
 
