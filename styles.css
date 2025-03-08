@@ -464,7 +464,7 @@ h3 {
 }
 
 /* Checkout Modal Container */
-#checkout-modal {
+.checkout-modal {
   position: fixed;
   top: 50%;
   left: 50%;
