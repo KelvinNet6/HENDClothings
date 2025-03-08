@@ -121,6 +121,7 @@ window.addEventListener("click", function(event) {
 
 // Update cart count on page load
 document.addEventListener("DOMContentLoaded", updateCartCount);
+
 // Open Checkout Modal when "Go to Checkout" is clicked
 document.getElementById("go-to-checkout").addEventListener("click", function() {
   document.getElementById("cart-modal").style.display = "none";
