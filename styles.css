@@ -451,7 +451,7 @@ h3 {
   .modal-content {
     width: 90%;
   }
-  /* Modal Background Overlay */
+/* Modal Background Overlay */
 .checkout-modal-overlay {
   position: fixed;
   top: 0;
@@ -590,7 +590,77 @@ h3 {
   display: block;
 }
 
-  h3 {
-    font-size: 1rem;
+/* Fix for h3 font size */
+#checkout-modal h3 {
+  font-size: 1.5rem;  /* Adjusted for responsiveness */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust modal width for tablets */
+  #checkout-modal {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #checkout-modal h3 {
+    font-size: 1.25rem; /* Slightly smaller header on tablets */
+  }
+
+  #checkout-modal .form-group {
+    margin-bottom: 15px;
+  }
+
+  #checkout-modal label {
+    font-size: 14px;
+  }
+
+  #checkout-modal input[type="text"],
+  #checkout-modal input[type="password"],
+  #checkout-modal input[type="number"],
+  #checkout-modal input[type="email"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #checkout-modal .checkout-btn,
+  #checkout-modal .pay-button {
+    padding: 10px;
+    font-size: 16px;
   }
 }
+
+@media (max-width: 480px) {
+  /* Adjust modal width for mobile phones */
+  #checkout-modal {
+    width: 95%;
+    padding: 15px;
+  }
+
+  #checkout-modal h3 {
+    font-size: 1.2rem; /* Smaller header for mobile */
+  }
+
+  #checkout-modal .form-group {
+    margin-bottom: 10px;
+  }
+
+  #checkout-modal label {
+    font-size: 13px;
+  }
+
+  #checkout-modal input[type="text"],
+  #checkout-modal input[type="password"],
+  #checkout-modal input[type="number"],
+  #checkout-modal input[type="email"] {
+    font-size: 13px;
+    padding: 7px;
+  }
+
+  #checkout-modal .checkout-btn,
+  #checkout-modal .pay-button {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
