@@ -499,10 +499,8 @@ h3 {
   color: #333;
 }
 
-#checkout-modal input[type="text"],
 #checkout-modal input[type="password"],
-#checkout-modal input[type="number"],
-#checkout-modal input[type="email"] {
+#checkout-modal input[type="number"]{
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -512,10 +510,8 @@ h3 {
   border-color: #007bff;
 }
 
-#checkout-modal input[type="text"]:focus,
 #checkout-modal input[type="password"]:focus,
-#checkout-modal input[type="number"]:focus,
-#checkout-modal input[type="email"]:focus {
+#checkout-modal input[type="number"]:focus, {
   border-color: #007bff;
   outline: none;
 }
