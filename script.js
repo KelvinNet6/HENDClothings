@@ -149,7 +149,14 @@ function showCheckoutModal() {
   // Display the checkout modal and overlay
   document.getElementById("checkout-modal").classList.add("show");
   document.getElementById("checkout-modal-overlay").classList.add("show");
+
+  // Set aria-hidden to false to make it visible to screen readers
+  document.getElementById("checkout-modal").setAttribute('aria-hidden', 'false');
+
+  // Prevent scrolling of the body when the modal is open
+  document.body.style.overflow = 'hidden'; 
 }
+
 
 // Function to hide the checkout modal and overlay
 function hideCheckoutModal() {
