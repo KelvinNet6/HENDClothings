@@ -129,20 +129,6 @@ function updateCheckoutTotal() {
   checkoutTotal.textContent = `$${totalAmount.toFixed(2)}`; // Display total with 2 decimal places
 }
 
-// Function to show the checkout modal and overlay
-function showCheckoutModal() {
-  // Display the checkout modal and overlay
-  document.getElementById("checkout-modal").classList.add("show");
-  document.getElementById("checkout-modal-overlay").classList.add("show");
-}
-
-// Function to hide the checkout modal and overlay
-function hideCheckoutModal() {
-  // Hide the checkout modal and overlay
-  document.getElementById("checkout-modal").classList.remove("show");
-  document.getElementById("checkout-modal-overlay").classList.remove("show");
-}
-
 // Open the Checkout Modal when the "Go to Checkout" button is clicked
 document.getElementById("checkout-button").addEventListener("click", function() {
   // Hide any other modals if they are open
@@ -157,6 +143,20 @@ document.getElementById("checkout-button").addEventListener("click", function() 
   showCheckoutModal();
    updateCheckoutTotal();
 });
+
+// Function to show the checkout modal and overlay
+function showCheckoutModal() {
+  // Display the checkout modal and overlay
+  document.getElementById("checkout-modal").classList.add("show");
+  document.getElementById("checkout-modal-overlay").classList.add("show");
+}
+
+// Function to hide the checkout modal and overlay
+function hideCheckoutModal() {
+  // Hide the checkout modal and overlay
+  document.getElementById("checkout-modal").classList.remove("show");
+  document.getElementById("checkout-modal-overlay").classList.remove("show");
+}
 
 // Close Checkout Modal when the close button is clicked
 document.getElementById("close-checkout-modal").addEventListener("click", function() {
