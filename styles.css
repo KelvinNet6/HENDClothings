@@ -509,6 +509,7 @@ h3 {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 5px;
+  border-color: #007bff;
 }
 
 #checkout-modal input[type="text"]:focus,
@@ -582,6 +583,7 @@ h3 {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 5px;
+  border-color: #007bff;
 }
 
 /* Overlay styles for smooth background */
