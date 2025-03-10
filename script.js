@@ -146,16 +146,31 @@ document.getElementById("checkout-button").addEventListener("click", function() 
 
 // Function to show the checkout modal and overlay
 function showCheckoutModal() {
-  // Display the checkout modal and overlay
-  document.getElementById("checkout-modal").classList.add("show");
-  document.getElementById("checkout-modal-overlay").classList.add("show");
+  const checkoutModal = document.getElementById("checkout-modal");
+  const checkoutOverlay = document.getElementById("checkout-modal-overlay");
+  
+  // Add the 'show' class to both modal and overlay to make them visible
+  checkoutModal.classList.add("show");
+  checkoutOverlay.classList.add("show");
 
-  // Set aria-hidden to false to make it visible to screen readers
-  document.getElementById("checkout-modal").setAttribute('aria-hidden', 'false');
-
-  // Prevent scrolling of the body when the modal is open
-  document.body.style.overflow = 'hidden'; 
+  // Prevent scrolling when the modal is open
+  document.body.style.overflow = "hidden";
 }
+
+// Open the Checkout Modal when the "Go to Checkout" button is clicked
+document.getElementById("checkout-button").addEventListener("click", function() {
+  // Hide the cart modal if open
+  document.getElementById("cart-modal").style.display = "none";
+
+  // Calculate and display the total amount in the checkout modal
+  const checkoutTotal = document.getElementById("checkout-total");
+  const totalAmount = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  checkoutTotal.textContent = `$${totalAmount.toFixed(2)}`;
+
+  // Show the checkout modal
+  showCheckoutModal();
+});
+
 
 
 // Function to hide the checkout modal and overlay
