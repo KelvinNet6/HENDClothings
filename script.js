@@ -222,6 +222,18 @@ function processPayment(paysheetNumber, paysheetPassword, totalAmount) {
   });
 }
 
+// Handle contact form submission
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      showToastMessage('Message sent successfully!');
+      contactForm.reset();
+    });
+  }
+});
+
 // Initialize PayPal when the checkout modal is shown
 function showCheckoutModal() {
   const checkoutModal = document.getElementById("checkout-modal");

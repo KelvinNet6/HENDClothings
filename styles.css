@@ -343,12 +343,104 @@ form button:hover {
   }
 }
 
+/* About Page Styles */
+.about-section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.feature i {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Contact Page Styles */
+.contact-section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+.contact-form button {
+  background: #333;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-info {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.info-item {
+  text-align: center;
+}
+
+.info-item i {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
 footer {
   text-align: center;
   background-color: #333;
   color: white;
   padding: 20px;
   margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .about-features,
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
 }
 /* Cart Modal Styles */
 .cart-modal {
