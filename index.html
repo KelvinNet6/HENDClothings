@@ -3,169 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HEND</title>
+  <title>Elite Footwear & Formal</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  
-<header>
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#collection">Collection</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li class="cart-icon">
-        <a href="javascript:void(0)" id="cart-icon">
-          <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
-        </a>
-
-        <!-- Cart Modal -->
-        <div id="cart-modal" class="cart-modal">
-          <div class="modal-content">
-            <span id="close-modal" class="close-btn">&times;</span>
-            <h3>Your Cart</h3>
-            <div id="cart-items"></div>
-            <div id="cart-total"></div>
-            <a href="javascript:void(0)" id="checkout-button" class="checkout-btn">Checkout</a>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#nike">Nike</a></li>
+        <li><a href="#jordan">Jordan</a></li>
+        <li><a href="#other-brands">Other Brands</a></li>
+        <li><a href="#formal">Formal Wear</a></li>
+        <li class="cart-icon">
+          <a href="javascript:void(0)" id="cart-icon">
+            <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+          </a>
+          <!-- Cart Modal -->
+          <div id="cart-modal" class="cart-modal">
+            <div class="modal-content">
+              <span id="close-modal" class="close-btn">&times;</span>
+              <h3>Your Cart</h3>
+              <div id="cart-items"></div>
+              <div id="cart-total"></div>
+              <a href="javascript:void(0)" id="checkout-button" class="checkout-btn">Checkout</a>
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
-  </nav>
-</header>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-
-
-  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-text">
-      <h1>HEND PERFECT WEAR</h1>
-      <p>Relaxed. Cool. Anticipation.</p><br>
-      <p>Explore the light blue matching set collection.</p><br>
-      <a href="#collection" class="cta-btn">Shop Now</a>
+      <h1>Elite Footwear & Formal</h1>
+      <p>Premium Sneakers & Formal Wear Collection</p><br>
+      <p>Discover the latest in footwear fashion</p><br>
+      <a href="#nike" class="cta-btn">Shop Now</a>
     </div>
   </section>
 
- <!-- Product Section -->
-<section id="collection" class="product-section">
-  <h2>Featured 'HEND' Collections</h2>
-  <div class="product-grid">
-    <div class="product">
-      <img src="D18B0C02-3FE3-4B90-B05D-93D0C2AF2325.jpg" alt="Light Blue T-Shirt" class="product-img">
-      <div class="product-info">
-        <h3>LightBlue 'HEND' OutFit</h3>
-        <p>A soft, breathable cotton tee with a minimalist design.</p>
-        <p class="price">$40</p>
-        <button onclick="addToCart('AllBlack HEND Outfits', 40,'D18B0C02-3FE3-4B90-B05D-93D0C2AF2325.jpg')">Add to Cart</button>
+  <!-- Nike Section -->
+  <section id="nike" class="category-section">
+    <h2 class="category-title">Nike Collection</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-WrLlWX.png" alt="Nike Air Force 1" class="product-img">
+        <div class="product-info">
+          <h3>Nike Air Force 1 Low</h3>
+          <p>Classic white sneaker with timeless design.</p>
+          <p class="price">$100</p>
+          <button onclick="addToCart('Nike Air Force 1 Low', 100, 'af1-white.jpg')">Add to Cart</button>
+        </div>
       </div>
+      <!-- Add more Nike products here -->
     </div>
-    
-    <div class="product">
-      <img src="7CA8AD24-3C9F-4443-8FF7-A64C5765F06F.jpg" alt="Light Blue Shorts" class="product-img">
-      <div class="product-info">
-        <h3>BlackWhite 'HEND' OutFits</h3>
-        <p>Comfortable, stretchy shorts designed for casual streetwear.</p>
-        <p class="price">$35</p>
-        <button onclick="addToCart('BlackWhite HEND Outfits', 35,'7CA8AD24-3C9F-4443-8FF7-A64C5765F06F.jpg')">Add to Cart</button>
-      </div>
-      
-    </div>
-     <div class="product">
-      <img src="3F616F2B-9640-4768-B4F0-36C947DF9EDA.jpg" alt="Light Blue Shorts" class="product-img">
-      <div class="product-info">
-        <h3>AllWhite 'HEND' OutFits</h3>
-        <p>Comfortable, stretchy shorts designed for casual streetwear.</p>
-        <p class="price">$35</p>
-        <button onclick="addToCart('AllWhite HEND Outfits', 35,'3F616F2B-9640-4768-B4F0-36C947DF9EDA.jpg')">Add to Cart</button>
-      </div>
-    </div>
-    
-     <div class="product">
-      <img src="57738AB5-C7A0-4164-9D8E-815AF95D9347.jpg" alt="Light Blue Shorts" class="product-img">
-      <div class="product-info">
-        <h3>Branded 'HEND' BackPack</h3>
-        <p>Comfortable, stretchy shorts designed for casual streetwear.</p>
-        <p class="price">$35</p>
-        <button onclick="addToCart('Branded HEND BackPack', 50,'57738AB5-C7A0-4164-9D8E-815AF95D9347.jpg')">Add to Cart</button>
-      </div>
-    </div>
-
-     <div class="product">
-      <img src="14B7547A-6C59-4350-BAE0-640D7E0C8C5E.jpg" alt="Light Blue Shorts" class="product-img">
-      <div class="product-info">
-        <h3>CustomBranded 'HEND' AirForce1</h3>
-        <p>Comfortable, Casual Footwear.</p>
-        <p class="price">$35</p>
-        <button onclick="addToCart('CustomBranded HEND AirForce1', 75,'14B7547A-6C59-4350-BAE0-640D7E0C8C5E.jpg')">Add to Cart</button>
-      </div>
-    </div>
-
-     <div class="product">
-      <img src="51B095C4-BF18-4A1D-82BD-4DD2DB327E2A.jpg" alt="Light Blue Shorts" class="product-img">
-      <div class="product-info">
-        <h3>CustomBranded 'HEND' Socks</h3>
-        <p>Comfortable, Stretchy, Keeping your feet warm always.</p>
-        <p class="price">$35</p>
-        <button onclick="addToCart('CustomBranded HEND Socks', 15,'51B095C4-BF18-4A1D-82BD-4DD2DB327E2A.jpg')">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About HEND</h2>
-    <p>Our mission is to create streetwear that feels like home but looks like the future. HEND is about calm, cool, and anticipation in every design.</p>
   </section>
-<br>
-  <!-- Contact Section -->
-<section id="contact">
-  <div class="contact-container">
-    <h2>Get in Touch With Us</h2>
-    <!-- Social Media Links Section -->
-    <div class="social-media">
-      <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="mailto:your-email@example.com" class="social-icon email">
-        <i class="fas fa-envelope"></i>
-      </a>
+
+  <!-- Jordan Section -->
+  <section id="jordan" class="category-section">
+    <h2 class="category-title">Jordan Collection</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://image.goat.com/375/attachments/product_template_pictures/images/011/119/994/original/218099_00.png.png" alt="Air Jordan 3" class="product-img">
+        <div class="product-info">
+          <h3>Air Jordan 3 Retro</h3>
+          <p>Iconic basketball sneaker with elephant print.</p>
+          <p class="price">$200</p>
+          <button onclick="addToCart('Air Jordan 3 Retro', 200, 'aj3.jpg')">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Add more Jordan products here -->
+    </div>
+  </section>
+
+  <!-- Other Brands Section -->
+  <section id="other-brands" class="category-section">
+    <h2 class="category-title">Other Brands</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/09c5ea6df1bd4be6baaaac5e003e7047_9366/Forum_Low_Shoes_White_FY7756_01_standard.jpg" alt="Adidas Forum" class="product-img">
+        <div class="product-info">
+          <h3>Adidas Forum Low</h3>
+          <p>Classic basketball-inspired sneaker.</p>
+          <p class="price">$90</p>
+          <button onclick="addToCart('Adidas Forum Low', 90, 'adidas-forum.jpg')">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Add more brand products here -->
+    </div>
+  </section>
+
+  <!-- Formal Wear Section -->
+  <section id="formal" class="category-section">
+    <h2 class="category-title">Formal Collection</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://suitsupply.com/dw/image/v2/AAJK_PRD/on/demandware.static/-/Sites-masterCatalog_Suitsupply/default/dw9a156962/images/large/SHOES_BLACK_OXFORD_REGULAR_11359_SIDE_V.jpg" alt="Oxford Shoes" class="product-img">
+        <div class="product-info">
+          <h3>Classic Oxford Shoes</h3>
+          <p>Premium leather formal shoes.</p>
+          <p class="price">$150</p>
+          <button onclick="addToCart('Classic Oxford Shoes', 150, 'oxford.jpg')">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Add more formal wear products here -->
+    </div>
+  </section>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="checkout-modal" aria-labelledby="checkout-modal-header" aria-hidden="true">
+    <div class="modal-content">
+      <span id="close-checkout-modal" class="close-btn">&times;</span>
+      <h3>Checkout</h3>
+      <p>Total Amount: <span id="checkout-total"></span></p>
+      <form id="payment-form">
+        <label for="paysheet-number">Paysheet Number:</label>
+        <input type="text" id="paysheet-number" name="paysheet-number" required>
+
+        <!-- Password Field is initially hidden -->
+        <div id="password-field" style="display:none;">
+          <label for="paysheet-password">Password:</label>
+          <input type="password" id="paysheet-password" name="paysheet-password" required>
+        </div>
+
+        <!-- Pay Button -->
+        <button type="button" id="pay-button">Pay</button>
+      </form>
+      <div id="payment-status"></div>
     </div>
   </div>
-</section>
 
-<!-- Checkout Modal -->
-<div id="checkout-modal" class="checkout-modal" aria-labelledby="checkout-modal-header" aria-hidden="true">
-  <div class="modal-content">
-    <span id="close-checkout-modal" class="close-btn">&times;</span>
-    <h3>Checkout</h3>
-    <p>Total Amount: <span id="checkout-total"></span></p>
-    <form id="payment-form">
-      <label for="paysheet-number">Paysheet Number:</label>
-      <input type="text" id="paysheet-number" name="paysheet-number" required>
+  <!-- Checkout Modal Overlay -->
+  <div class="checkout-modal-overlay" id="checkout-modal-overlay"></div>
 
-      <!-- Password Field is initially hidden -->
-      <div id="password-field" style="display:none;">
-        <label for="paysheet-password">Password:</label>
-        <input type="password" id="paysheet-password" name="paysheet-password" required>
-      </div>
-
-      <!-- Pay Button -->
-      <button type="button" id="pay-button">Pay</button>
-    </form>
-    <div id="payment-status"></div>
-  </div>
-</div>
-
-<!-- Checkout Modal Overlay -->
-<div class="checkout-modal-overlay" id="checkout-modal-overlay"></div>
-
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 HEND Streetwear. All rights reserved.</p>
+    <p>&copy; 2025 Elite Footwear & Formal. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>

@@ -140,9 +140,20 @@ nav ul li a {
 /* Product Grid Layout */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  gap: 15px;
   margin-top: 20px;
+}
+
+.category-section {
+  margin: 40px 0;
+}
+
+.category-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
 }
 
 /* Product Card Styling */
