@@ -222,36 +222,44 @@ function processPayment(paysheetNumber, paysheetPassword, totalAmount) {
   });
 }
 
-// Handle Payment Form Submission (after the user enters Paysheet Number and Password)
-document.getElementById("payment-form").addEventListener("submit", function(event) {
-  event.preventDefault();
+// Initialize PayPal when the checkout modal is shown
+function showCheckoutModal() {
+  const checkoutModal = document.getElementById("checkout-modal");
+  const checkoutOverlay = document.getElementById("checkout-modal-overlay");
+  const totalAmount = cart.reduce((total, item) => total + item.price * item.quantity, 0);
   
-  // Get the user input
-  const paysheetNumber = document.getElementById("paysheet-number").value;
-  const paysheetPassword = document.getElementById("paysheet-password").value;
-  
-  // Calculate the total amount
-  const totalAmount = cart.reduce((total, item) => total + item.price, 0);
-  
-  // Call the mock payment API function (this is where you would integrate a real payment provider API)
-  processPayment(paysheetNumber, paysheetPassword, totalAmount)
-    .then(response => {
-      // If the payment was successful, clear the cart and update the UI
-      cart = [];  // Empty the cart
-      updateCart(); // Update the cart UI
+  // Initialize PayPal button
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: totalAmount.toFixed(2)
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        // Payment successful
+        const paymentStatus = document.getElementById("payment-status");
+        paymentStatus.textContent = "Payment successful! Thank you for your purchase.";
+        
+        // Clear cart
+        cart = [];
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+        
+        // Close modal after 3 seconds
+        setTimeout(() => {
+          hideCheckoutModal();
+          paymentStatus.textContent = '';
+        }, 3000);
+      });
+    }
+  }).render('#paypal-button-container');
 
-      // Display success message
-      const paymentStatus = document.getElementById("payment-status");
-      paymentStatus.textContent = response.message;
-
-      // Close the checkout modal after 3 seconds
-      setTimeout(() => {
-        document.getElementById("checkout-modal").style.display = "none";
-        paymentStatus.textContent = ''; // Clear payment status message
-      }, 3000);
-    })
-    .catch(error => {
-      // If there was an error (invalid Paysheet details or API failure), show an error message
-      alert(error);
-    });
-});
+  checkoutModal.style.display = "block";
+  checkoutOverlay.style.display = "block";
+  document.body.style.overflow = "hidden";
+}
