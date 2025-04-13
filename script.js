@@ -1,6 +1,15 @@
 // Load cart from localStorage or initialize an empty array
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+// Hide checkout modal on page load
+document.addEventListener("DOMContentLoaded", function() {
+  const checkoutModal = document.getElementById("checkout-modal");
+  const checkoutOverlay = document.getElementById("checkout-modal-overlay");
+  
+  if (checkoutModal) checkoutModal.style.display = "none";
+  if (checkoutOverlay) checkoutOverlay.style.display = "none";
+});
+
 // Function to update cart count in UI
 function updateCartCount() {
   const cartCountElement = document.getElementById("cart-count");
