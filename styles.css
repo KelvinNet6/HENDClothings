@@ -474,9 +474,10 @@ h3 {
   border-radius: 8px;
   width: 400px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  display: none; /* Hidden by default */
+  display: none;
   z-index: 1001;
-  max-width: 100%; /* Ensure the modal doesn't overflow the screen */
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 /* Modal Visibility */
@@ -506,14 +507,15 @@ h3 {
   color: #333;
 }
 
+#checkout-modal input[type="text"],
 #checkout-modal input[type="password"],
-#checkout-modal input[type="number"]{
+#checkout-modal input[type="number"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-top: 5px;
+  margin: 8px 0 16px;
   border-color: #007bff;
 }
 
