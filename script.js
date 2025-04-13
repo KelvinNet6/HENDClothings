@@ -149,11 +149,8 @@ function showCheckoutModal() {
   const checkoutModal = document.getElementById("checkout-modal");
   const checkoutOverlay = document.getElementById("checkout-modal-overlay");
   
-  // Add the 'show' class to both modal and overlay to make them visible
-  checkoutModal.classList.add("show");
-  checkoutOverlay.classList.add("show");
-
-  // Prevent scrolling when the modal is open
+  checkoutModal.style.display = "block";
+  checkoutOverlay.style.display = "block";
   document.body.style.overflow = "hidden";
 }
 
@@ -175,9 +172,9 @@ document.getElementById("checkout-button").addEventListener("click", function() 
 
 // Function to hide the checkout modal and overlay
 function hideCheckoutModal() {
-  // Hide the checkout modal and overlay
-  document.getElementById("checkout-modal").classList.remove("show");
-  document.getElementById("checkout-modal-overlay").classList.remove("show");
+  document.getElementById("checkout-modal").style.display = "none";
+  document.getElementById("checkout-modal-overlay").style.display = "none";
+  document.body.style.overflow = "auto";
 }
 
 // Close Checkout Modal when the close button is clicked
